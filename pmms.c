@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 /*Takes in file names of matrix A and B as arguments as well as their dimensions*/
+/*pmms matrix_A matrix_B M N K*/
 int main(int argc, char** argv)
 {
 	int m;
@@ -36,4 +37,25 @@ int** buildMatrixArray(int m, int n)
 	}
 
 	return array;
+}
+
+int calcTotal(int m, int n, int k, int** arrayA, int** arrayB)
+{
+	int pid;
+	pid = fork();
+
+	/*Check for error*/
+	if(pid < 0)
+	{
+		perror("Fork failed");
+		exit(-1);
+	}
+	else if(pid != 0) /*Parent process*/
+	{
+		
+	}
+	else /*Child process*/
+	{
+
+	}
 }

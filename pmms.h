@@ -5,4 +5,4 @@ typedef stuct
 {
 	int subtotal;
 	int pid;
-}subtotal;
+} subtotal;
