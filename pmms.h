@@ -1,7 +1,7 @@
 /*Forward declarations*/
-int** buildMatrixArray(int m, int n);
 int calcTotal(int m, int n, int k, int* arrayA, int* arrayB);
 
+/*Subtotal datatype declaration*/
 typedef struct Subtotal
 {
 	int subtotal;

@@ -1,1 +1,2 @@
-int* readFile(char* fileName, int m, int n, int* input);
+/*Forward declaration*/
+void readFile(char* fileName, int m, int n, int* input);

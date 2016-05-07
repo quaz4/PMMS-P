@@ -3,31 +3,30 @@
 
 #include "fileIO.h"
 
-int* readFile(char* fileName, int m, int n, int* input)
+/*Reads in a matrix and writes to array for output*/
+void readFile(char* fileName, int m, int n, int* input)
 {
 	FILE* f;
 	char c;
 	int count;
-	int currentNum;
 	int position;
 	int i;
-
 	char* buffer;
 
+    /*Create buffer to store chars as they are read in for atoi*/
 	buffer = (char*)malloc(sizeof(char)*10);
 
-	currentNum = 0;
 	position = 0;
 	count = 0;
 
+    /*Open file in reader mode*/
 	f = fopen(fileName, "r");
-
 
 	do
 	{
 		c = getc(f);
 
-		/*If not end of number*/
+		/*If not end of number add to buffer*/
 		if(((c != ' ') && (c != '\n')) && (c != EOF))
 		{
 			buffer[count] = c;
@@ -35,14 +34,17 @@ int* readFile(char* fileName, int m, int n, int* input)
 		}
 		else
 		{
+            /*Convert buffer to int value and add to array*/
 			input[position] = atoi(buffer);
 			position++;
-			count = 0;
 
-			for(i = 0; i < 10; i++)
+            /*Set all buffer positions used to null terminator to clear buffer*/
+			for(i = 0; i < count; i++)
 			{
 				buffer[i] = '\0';
 			}
+
+			count = 0;
 		}
 
 	}
@@ -50,7 +52,6 @@ int* readFile(char* fileName, int m, int n, int* input)
 
 	fclose(f);
 
+    /*Free buffer array*/
 	free(buffer);
-
-	return input;
 }
