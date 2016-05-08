@@ -1,3 +1,8 @@
+/*
+    Created by William Stewart 18349788
+    A program that calculates the matrix multiplication sum of two matrices
+*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
